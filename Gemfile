@@ -49,4 +49,5 @@ end
 group :production do
   # Use postgresql as the database for Active Record
   gem 'pg'
+  gem 'rails_12factor'
 end
