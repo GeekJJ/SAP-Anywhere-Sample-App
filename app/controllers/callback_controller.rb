@@ -6,12 +6,12 @@ class CallbackController < ApplicationController
       occ_host = params[:sapanywhere]
       timestamp = params[:timestamp]
       hmac = params[:hmac]
-      @confirm_url = "#{occ_host}/oauth/authorize?response_type=code&client_id=#{api_key}&scope=#{install_scope}&redirect_uri=http://localhost:3000/call_back/install"
+      @confirm_url = "#{occ_host}/oauth/authorize?response_type=code&client_id=#{api_key}&scope=#{install_scope}&redirect_uri=#{call_back_url}"
       redirect_to @confirm_url and return
     else
       auth_code = params[:code]
       occ_host = params[:sapanywhere]
-      @token = token(occ_host, auth_code, "http://localhost:3000/call_back/install")
+      @token = token(occ_host, auth_code, call_back_url)
       redirect_to action: :success and return
     end
   end

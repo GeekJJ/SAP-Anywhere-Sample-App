@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  get '/call_back/install' => 'callback#install'
+  get '/call_back/install' => 'callback#install', as: :call_back
 
   get '/call_back/success' => 'callback#success'
 
