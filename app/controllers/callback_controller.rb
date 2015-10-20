@@ -29,7 +29,6 @@ class CallbackController < ApplicationController
       results = []
       url = URI.parse("#{occ_host}/oauth/token?client_id=#{api_key}&client_secret=#{api_secret}&grant_type=authorization_code&code=#{auth_code}&redirect_uri=#{redirect_url}")
       # req = Net::HTTP::Get.new(url.to_s)
-      binding.pry
       res = Net::HTTP.start(url.host, url.port,
         :use_ssl => url.scheme == 'https',
         :verify_mode => OpenSSL::SSL::VERIFY_NONE) { |http|
