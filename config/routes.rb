@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
+  get '/call_back/install' => 'callback#install'
+
+  get '/call_back/success' => 'callback#success'
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
